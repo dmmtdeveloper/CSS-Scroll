@@ -1,6 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* outline: 1px solid red; */
 }
 
+
+
+:root{
+    --paragraph-font: 'Inter', sans-serif;;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-family: 'Playfair Display', serif;
+    background: #dddddd;
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    padding: 6em 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero{
+    min-height: 100vh;
+}
+
+.hero__title{
+    color: #181717;
+    font-size: 2.8em;
+    text-align: left;
+}
+
+.hero__paragraph{
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1em;
+    color: rgb(58, 58, 58);
+    font-weight: 400;
+    font-family: var(--paragraph-font);
+}
+
+p{
+    text-align: left;
+    padding-top: 1em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: var(--paragraph-font);
+}
+
+.hero__picture{
+    padding-top: 1em;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+.hero__img{
+    width: 100%;
+    display: block;
+    border-radius: 0.5em;
+}
+
+
+@keyframes show{
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+    
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+img{
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    
+    animation-timeline: --image;
+    animation-name: show;
+    
+    animation-range: entry 25% cover 50%;
+    animation-fill-mode: both;
+}
+
+
+@media (min-width:768px){
+    .container{
+        width: 40%;
+        /* max-width: 500px; */
+    }
+    
+    .hero__title{
+        font-size: 4.5em;
+        text-align: left;
+    }
+    
+    .hero__paragraph{
+        font-size: 1.5em;
+        width: 100%;
+    }
+
+    p{
+        text-align: left;
+        padding-top: 1em;
+        font-size: 1.2em;
+        font-weight: 500;
+        font-family: var(--paragraph-font);
+    }
+}
