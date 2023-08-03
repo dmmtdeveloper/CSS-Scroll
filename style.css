@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,18 +9,18 @@
 
 
 
-:root{
-    --paragraph-font: 'Inter', sans-serif;;
+:root {
+    --paragraph-font: 'Inter', sans-serif;
 }
 
 
-body{
+body {
     font-family: 'Inter', sans-serif;
     font-family: 'Playfair Display', serif;
     background: #dddddd;
 }
 
-.container{
+.container {
     width: 90%;
     max-width: 1200px;
     padding: 6em 0;
@@ -28,17 +28,18 @@ body{
     text-align: center;
 }
 
-.hero{
+.hero {
     min-height: 100vh;
 }
 
-.hero__title{
+.hero__title {
     color: #181717;
     font-size: 2.8em;
     text-align: left;
 }
 
-.hero__paragraph{
+
+.hero__paragraph {
     margin: 0 auto;
     text-align: left;
     font-size: 1em;
@@ -47,7 +48,7 @@ body{
     font-family: var(--paragraph-font);
 }
 
-p{
+p {
     text-align: left;
     padding-top: 1em;
     font-size: 1em;
@@ -55,61 +56,72 @@ p{
     font-family: var(--paragraph-font);
 }
 
-.hero__picture{
+.hero__picture {
     padding-top: 1em;
     margin: 0 auto;
     width: 100%;
     padding-bottom: 1em;
 }
 
-.hero__img{
+.hero__img {
     width: 100%;
     display: block;
     border-radius: 0.5em;
 }
 
-
-@keyframes show{
-    from{
+/* Crear animación */
+@keyframes show {
+    from {
+        /* imagen transparente */
         opacity: 0;
+        /* el tamaño de la imagen sera del 25% */
         scale: 25%;
     }
-    
-    to{
+
+    to {
+        /* al finalizar veremos la imagen al 100% */
         opacity: 1;
+        /* el tamaño de la imagen sera del 100% */
         scale: 100%;
     }
 }
 
-img{
+/* Estilar las imágenes */
+img {
+    /* Nombre enlazado al scroll */
     view-timeline-name: --image;
+    /* ejes block = Vertical / inline= Horizontal */
     view-timeline-axis: block;
-    
+
+    /* se enlaza el scroll junto con el elemento que vamos animar */
     animation-timeline: --image;
+    /* Esta es la animación que utilizaremos */
     animation-name: show;
-    
+    /* entry: cuando el usuario ve el 25% de la imagen comienza la animación
+        cover : termina la animacion cuando el elemento se este mostrando en un 50% */
     animation-range: entry 25% cover 50%;
+    /* solución de parpadeo, esto hace que la animacion funcione hacia los 2 sentidos */
     animation-fill-mode: both;
 }
 
 
-@media (min-width:768px){
-    .container{
+@media (min-width:768px) {
+    .container {
         width: 40%;
         /* max-width: 500px; */
     }
-    
-    .hero__title{
+
+    .hero__title {
         font-size: 4.5em;
         text-align: left;
     }
-    
-    .hero__paragraph{
+
+    .hero__paragraph {
         font-size: 1.5em;
         width: 100%;
     }
 
-    p{
+    p {
         text-align: left;
         padding-top: 1em;
         font-size: 1.2em;
